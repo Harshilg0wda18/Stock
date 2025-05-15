@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>StockSense - Market Analysis & Prediction</title>
+    <meta name="description" content="Advanced stock market analysis and prediction platform" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="index.html">
+              <span class="logo-text">StockSense</span>
+            </a>
+          </div>
+          <nav class="main-nav">
+            <ul class="nav-list">
+              <li><a href="#features">Features</a></li>
+              <li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+          </nav>
+          <div class="auth-buttons">
+            <a href="login.html" class="btn btn-secondary">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+          </div>
+          <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <h1>Predict the Unpredictable</h1>
+              <p class="hero-subtitle">Advanced AI-powered stock market analysis to help you make data-driven investment decisions</p>
+              <div class="hero-cta">
+                <a href="signup.html" class="btn btn-primary btn-large">Get Started Free</a>
+                <a href="#how-it-works" class="btn btn-outline btn-large">Learn More</a>
+              </div>
+            </div>
+            <div class="hero-image">
+              
+              <div class="floating-card card-1">
+                <div class="stock-info">
+                  <div class="stock-name">AAPL</div>
+                  <div class="stock-price">$182.63</div>
+                </div>
+                <div class="stock-trend positive">+2.4%</div>
+              </div>
+              <div class="floating-card card-2">
+                <div class="stock-info">
+                  <div class="stock-name">TSLA</div>
+                  <div class="stock-price">$242.11</div>
+                </div>
+                <div class="stock-trend negative">-1.2%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="container">
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-number">98%</span>
+                <span class="stat-label">Prediction Accuracy</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">10k+</span>
+                <span class="stat-label">Active Investors</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">4.5M+</span>
+                <span class="stat-label">Predictions Made</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">39%</span>
+                <span class="stat-label">Avg. Return Rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="features">
+        <div class="container">
+          <div class="section-header">
+            <h2>Powerful Features for Smart Investing</h2>
+            <p>Our platform combines advanced analytics with machine learning to give you the edge in the market</p>
+          </div>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="img/icon-analysis.svg" alt="Analysis Icon">
+              </div>
+              <h3>Advanced Analysis</h3>
+              <p>Comprehensive technical and fundamental analysis of stocks with easy-to-understand visualizations</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="img/icon-prediction.svg" alt="Prediction Icon">
+              </div>
+              <h3>AI Predictions</h3>
+              <p>Machine learning algorithms that predict market trends with remarkably high accuracy</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="img/icon-portfolio.svg" alt="Portfolio Icon">
+              </div>
+              <h3>Portfolio Management</h3>
+              <p>Track and manage your investments in real-time with automated rebalancing suggestions</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="img/icon-alerts.svg" alt="Alerts Icon">
+              </div>
+              <h3>Real-time Alerts</h3>
+              <p>Get notified instantly about important market movements and opportunities</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="img/icon-risk.svg" alt="Risk Icon">
+              </div>
+              <h3>Risk Assessment</h3>
+              <p>Understand and mitigate potential risks with our sophisticated risk analysis tools</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <img src="img/icon-report.svg" alt="Report Icon">
+              </div>
+              <h3>Custom Reports</h3>
+              <p>Generate detailed reports tailored to your specific investment strategy and goals</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section id="how-it-works" class="how-it-works">
+        <div class="container">
+          <div class="section-header">
+            <h2>How StockSense Works</h2>
+            <p>Our advanced technology makes market analysis simple and accessible</p>
+          </div>
+          <div class="steps-container">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Data Collection</h3>
+                <p>We gather real-time data from multiple financial sources, news, and market indicators</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>AI Analysis</h3>
+                <p>Our algorithms process and analyze the data to identify patterns and potential opportunities</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Prediction Generation</h3>
+                <p>The system generates predictions with confidence scores based on historical accuracy</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3>Actionable Insights</h3>
+                <p>You receive clear, actionable investment insights through our intuitive dashboard</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="testimonials">
+        <div class="container">
+          <div class="section-header">
+            <h2>What Our Users Say</h2>
+            <p>Join thousands of successful investors who trust StockSense</p>
+          </div>
+          <div class="testimonial-slider">
+            <div class="testimonial-slides">
+              <div class="testimonial active">
+                <div class="testimonial-content">
+                  <div class="quote">"StockSense's predictive analytics have completely transformed my investment strategy. I've seen a 28% increase in my portfolio's performance since I started using it."</div>
+                  <div class="testimonial-author">
+                    <img src="img/avatar-1.jpg" alt="Sarah Johnson" class="author-image">
+                    <div class="author-info">
+                      <div class="author-name">Sarah Johnson</div>
+                      <div class="author-title">Individual Investor</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial">
+                <div class="testimonial-content">
+                  <div class="quote">"As a financial advisor, I've tried many analysis tools, but none come close to the accuracy and ease of use that StockSense provides. It's now an essential part of my client recommendations."</div>
+                  <div class="testimonial-author">
+                    <img src="img/avatar-2.jpg" alt="Michael Rodriguez" class="author-image">
+                    <div class="author-info">
+                      <div class="author-name">Michael Rodriguez</div>
+                      <div class="author-title">Financial Advisor</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial">
+                <div class="testimonial-content">
+                  <div class="quote">"The real-time alerts and risk assessment features have saved me from several bad investments. The ROI on this platform has been exceptional."</div>
+                  <div class="testimonial-author">
+                    <img src="img/avatar-3.jpg" alt="Lisa Chen" class="author-image">
+                    <div class="author-info">
+                      <div class="author-name">Lisa Chen</div>
+                      <div class="author-title">Day Trader</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-controls">
+              <button class="testimonial-prev" aria-label="Previous testimonial">&#10094;</button>
+              <div class="testimonial-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+              </div>
+              <button class="testimonial-next" aria-label="Next testimonial">&#10095;</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="pricing">
+        <div class="container">
+          <div class="section-header">
+            <h2>Simple, Transparent Pricing</h2>
+            <p>Choose the plan that fits your investment needs</p>
+          </div>
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3>Starter</h3>
+                <div class="price">
+                  <span class="currency">$</span>
+                  <span class="amount">0</span>
+                  <span class="period">/month</span>
+                </div>
+                <p>Perfect for beginners exploring the market</p>
+              </div>
+              <ul class="pricing-features">
+                <li>Basic market analysis</li>
+                <li>Limited historical data</li>
+                <li>3 stock watchlists</li>
+                <li>Daily market summary</li>
+                <li class="not-included">AI predictions</li>
+                <li class="not-included">Real-time alerts</li>
+                <li class="not-included">Risk assessment</li>
+              </ul>
+              <a href="signup.html" class="btn btn-outline btn-full">Get Started Free</a>
+            </div>
+            <div class="pricing-card popular">
+              <div class="popular-tag">Most Popular</div>
+              <div class="pricing-header">
+                <h3>Pro</h3>
+                <div class="price">
+                  <span class="currency">$</span>
+                  <span class="amount">29</span>
+                  <span class="period">/month</span>
+                </div>
+                <p>For active individual investors</p>
+              </div>
+              <ul class="pricing-features">
+                <li>Advanced market analysis</li>
+                <li>5 years historical data</li>
+                <li>Unlimited watchlists</li>
+                <li>Real-time market data</li>
+                <li>Basic AI predictions</li>
+                <li>Custom alerts (up to 20)</li>
+                <li class="not-included">Advanced risk assessment</li>
+              </ul>
+              <a href="signup.html?plan=pro" class="btn btn-primary btn-full">Start 7-Day Trial</a>
+            </div>
+            <div class="pricing-card">
+              <div class="pricing-header">
+                <h3>Enterprise</h3>
+                <div class="price">
+                  <span class="currency">$</span>
+                  <span class="amount">99</span>
+                  <span class="period">/month</span>
+                </div>
+                <p>For professional traders and firms</p>
+              </div>
+              <ul class="pricing-features">
+                <li>Premium market analysis</li>
+                <li>Full historical data</li>
+                <li>Unlimited watchlists</li>
+                <li>Real-time market data</li>
+                <li>Advanced AI predictions</li>
+                <li>Unlimited custom alerts</li>
+                <li>Advanced risk assessment</li>
+              </ul>
+              <a href="signup.html?plan=enterprise" class="btn btn-outline btn-full">Start 14-Day Trial</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta">
+        <div class="container">
+          <div class="cta-content">
+            <h2>Ready to Transform Your Investment Strategy?</h2>
+            <p>Join thousands of successful investors who are already leveraging the power of StockSense</p>
+            <div class="cta-buttons">
+              <a href="signup.html" class="btn btn-primary btn-large">Get Started Free</a>
+              <a href="login.html" class="btn btn-outline btn-large">Login</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <a href="index.html">
+                <span class="logo-text">StockSense</span>
+              </a>
+            </div>
+            <p class="footer-description">Advanced stock market analysis and prediction platform powered by AI</p>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul class="footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Help Center</a></li>
+              <li><a href="#">API Documentation</a></li>
+              <li><a href="#">Market News</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="footer-links">
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Cookie Policy</a></li>
+              <li><a href="#">Disclaimer</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 StockSense. All rights reserved.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter"><span class="social-icon">Twitter</span></a>
+            <a href="#" aria-label="LinkedIn"><span class="social-icon">LinkedIn</span></a>
+            <a href="#" aria-label="Facebook"><span class="social-icon">Facebook</span></a>
+            <a href="#" aria-label="Instagram"><span class="social-icon">Instagram</span></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

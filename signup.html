@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Sign Up - StockSense</title>
+    <meta name="description" content="Create your StockSense account today" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <a href="index.html">
+              <span class="logo-text">StockSense</span>
+            </a>
+          </div>
+          <nav class="main-nav">
+            <ul class="nav-list">
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#how-it-works">How It Works</a></li>
+              <li><a href="index.html#testimonials">Testimonials</a></li>
+              <li><a href="index.html#pricing">Pricing</a></li>
+            </ul>
+          </nav>
+          <div class="auth-buttons">
+            <a href="login.html" class="btn btn-secondary">Login</a>
+            <a href="signup.html" class="btn btn-primary active">Sign Up</a>
+          </div>
+          <button class="mobile-menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="auth-section">
+        <div class="container">
+          <div class="auth-container">
+            <div class="auth-content">
+              <div class="auth-form-container">
+                <h1>Create Your Account</h1>
+                <p class="auth-subtitle">Start your investment journey today</p>
+                <form id="signupForm" class="auth-form">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="firstName">First Name</label>
+                      <input type="text" id="firstName" name="firstName" class="form-control" required>
+                      <div class="error-message" id="firstNameError"></div>
+                    </div>
+                    <div class="form-group">
+                      <label for="lastName">Last Name</label>
+                      <input type="text" id="lastName" name="lastName" class="form-control" required>
+                      <div class="error-message" id="lastNameError"></div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                    <div class="error-message" id="emailError"></div>
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="password-input-container">
+                      <input type="password" id="password" name="password" class="form-control" required>
+                      <button type="button" class="toggle-password" aria-label="Toggle password visibility"></button>
+                    </div>
+                    <div class="error-message" id="passwordError"></div>
+                    <div class="password-strength">
+                      <div class="strength-bar">
+                        <div class="strength-progress" id="passwordStrength"></div>
+                      </div>
+                      <span class="strength-text" id="passwordStrengthText">Password strength</span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-control" required>
+                    <div class="error-message" id="confirmPasswordError"></div>
+                  </div>
+                  <div class="form-checkbox">
+                    <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+                    <label for="termsAgreement">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                    <div class="error-message" id="termsError"></div>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                  <div class="auth-message" id="authMessage"></div>
+                </form>
+                <div class="auth-separator">
+                  <span>or</span>
+                </div>
+                <div class="social-auth">
+                  <button class="btn btn-social btn-google">
+                    <span class="social-icon">G</span>
+                    Continue with Google
+                  </button>
+                  <button class="btn btn-social btn-apple">
+                    <span class="social-icon">A</span>
+                    Continue with Apple
+                  </button>
+                </div>
+                <p class="auth-redirect">
+                  Already have an account? <a href="login.html">Log In</a>
+                </p>
+              </div>
+            </div>
+            <div class="auth-image">
+              <div class="auth-image-content">
+                <div class="auth-image-text">
+                  <h2>Unlock the power of AI-driven market analysis</h2>
+                  <p>Join thousands of investors who are already using StockSense to maximize their returns</p>
+                </div>
+                <img src="img/signup-illustration.svg" alt="Investment growth illustration">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer footer-simple">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>&copy; 2025 StockSense. All rights reserved.</p>
+          <div class="footer-links simple-links">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="#">Support</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js" defer></script>
+    <script src="js/auth.js" defer></script>
+  </body>
+</html>
