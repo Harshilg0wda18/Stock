@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Stock Price Chart</title>
+  <link rel="stylesheet" href="css/stocks.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Live Stock Price Viewer</h1>
+
+    <input type="text" id="tickerInput" placeholder="Enter Ticker Symbol (e.g., AAPL)">
+    <button onclick="loadStock()">Load Stock</button>
+
+    <div class="suggestions">
+      <p>Try: 
+        <button onclick="setTicker('AAPL')">Apple (AAPL)</button>
+        <button onclick="setTicker('AMZN')">Amazon (AMZN)</button>
+        <button onclick="setTicker('MSFT')">Microsoft (MSFT)</button>
+        <button onclick="setTicker('GOOGL')">Google (GOOGL)</button>
+      </p>
+    </div>
+
+    <canvas id="stockChart"></canvas>
+  </div>
+
+  <script src="js/stocks.js"></script>
+</body>
+</html>

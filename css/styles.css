@@ -1196,19 +1196,16 @@
     border-radius: var(--border-radius);
     font-size: 0.875rem;
     text-align: center;
-    display: none;
   }
   
   .auth-message.success {
     background-color: rgba(54, 179, 126, 0.1);
     color: var(--color-success);
-    display: block;
   }
   
   .auth-message.error {
     background-color: rgba(255, 86, 48, 0.1);
     color: var(--color-error);
-    display: block;
   }
   
   .form-options {
@@ -1434,3 +1431,168 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+
+/* Profile Dropdown Styles */
+.profile-dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  min-width: 200px;
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+/* Position dropdown for sidebar profile */
+.profile-container .profile-dropdown {
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+}
+
+/* Position dropdown for top nav profile */
+.top-nav-actions .profile-dropdown {
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+}
+
+.profile-dropdown.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background-color var(--transition);
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: var(--color-background-alt);
+  color: var(--color-primary);
+}
+
+.dropdown-item svg {
+  margin-right: 0.75rem;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background-color: var(--color-border);
+  margin: 0.5rem 0;
+}
+
+/* Make profile container relative for proper dropdown positioning */
+.profile-container {
+  position: relative;
+}
+
+.top-nav-actions .profile {
+  position: relative;
+}
+
+/* Ensure dropdown is visible on all screen sizes */
+@media (min-width: 768px) {
+  .profile-dropdown {
+    min-width: 220px;
+  }
+  
+  .profile-container .profile-dropdown {
+    right: 0;
+    left: auto;
+  }
+  
+  .top-nav-actions .profile-dropdown {
+    right: 0;
+    left: auto;
+  }
+}
+
+/* Profile Modal Styles */
+.profile-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.profile-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.profile-modal-content {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  transform: translateY(-20px);
+  transition: transform var(--transition);
+}
+
+.profile-modal.show .profile-modal-content {
+  transform: translateY(0);
+}
+
+.profile-modal-content h2 {
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+.profile-details {
+  margin-bottom: 2rem;
+}
+
+.profile-details p {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.profile-details p:last-child {
+  margin-bottom: 0;
+}
+
+.profile-details strong {
+  color: var(--color-text);
+  margin-right: 0.5rem;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: color var(--transition);
+}
+
+.close-modal:hover {
+  color: var(--color-text);
+}

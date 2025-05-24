@@ -1,0 +1,60 @@
+/* Dedicated Profile Modal Styles */
+.profile-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.profile-modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  max-width: 400px;
+  width: 90vw;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  position: relative;
+  text-align: left;
+}
+
+.profile-modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #172b4d;
+}
+
+.profile-details p {
+  margin: 0 0 1rem 0;
+  color: #172b4d;
+  font-size: 1rem;
+}
+
+.profile-details strong {
+  color: #0052cc;
+}
+
+.close-modal {
+  display: block;
+  margin: 2rem auto 0 auto;
+  padding: 0.5rem 2rem;
+  background: #0052cc;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.close-modal:hover {
+  background: #003d99;
+} 

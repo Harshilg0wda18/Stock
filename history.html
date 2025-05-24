@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stock History Viewer</title>
+  <link rel="stylesheet" href="css/history.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>📈 Stock Historical Price Viewer</h1>
+
+    <div class="controls">
+      <input type="text" id="tickerInput" placeholder="Enter Stock Ticker (e.g., AAPL)" />
+
+      <div class="quick-buttons">
+        <button onclick="setTicker('AAPL')">Apple</button>
+        <button onclick="setTicker('AMZN')">Amazon</button>
+        <button onclick="setTicker('GOOGL')">Google</button>
+      </div>
+
+      <div class="selectors">
+        <select id="rangeSelector">
+          <option value="7d">Last 7 Days</option>
+          <option value="30d">Last 30 Days</option>
+          <option value="3m">Last 3 Months</option>
+          <option value="1y">Last 1 Year</option>
+          <option value="5y">Last 5 Years</option>
+          <option value="10y">Last 10 Years</option>
+        </select>
+
+        <select id="intervalSelector">
+          <option value="1d">Daily</option>
+          <option value="1wk">Weekly</option>
+          <option value="1mo">Monthly</option>
+        </select>
+      </div>
+
+      <button onclick="loadHistoricalData()">📊 View</button>
+    </div>
+
+    <canvas id="stockChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/history.js"></script>
+</body>
+</html>

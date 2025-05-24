@@ -6,6 +6,7 @@
   <title>StockSense Dashboard</title>
   <meta name="description" content="Stock market analytics dashboard" />
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/profile-modal.css">
   <!-- Chart.js library - load before your script.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -30,23 +31,23 @@
           </svg>
           Overview
         </a>
-        <a href="#" class="nav-link">
+        <a href="sentiment.html" class="nav-link">
           <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2m0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
           </svg>
-          Analytics
+          Sentiment
         </a>
-        <a href="#" class="nav-link">
+        <a href="stocks.html" class="nav-link">
           <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
-          Stocks
+          live Stocks
         </a>
-        <a href="#" class="nav-link">
+        <a href="history.html" class="nav-link">
           <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
           </svg>
-          Portfolio
+          Historical
         </a>
         <a href="#" class="nav-link">
           <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -64,15 +65,16 @@
       </nav>
       
       <!-- User Profile -->
-      <div class="profile-container">
-        <div class="profile">
-          <div class="profile-avatar">JD</div>
-          <div class="profile-info">
-            <p class="profile-name">John Doe</p>
-            <p class="profile-role">Administrator</p>
-          </div>
-        </div>
-      </div>
+      
+<div class="profile-container">
+  <div class="profile">
+    <div class="profile-avatar" id="profile-avatar">--</div>
+    <div class="profile-info">
+      <p id="profile-name" class="profile-name">Loading...</p>
+      <p id="profile-role" class="profile-role">Fetching plan...</p>
+    </div>
+  </div>
+</div>
     </div>
     
     <!-- Main Content -->
@@ -92,7 +94,7 @@
             </svg>
           </button>
           <div class="mobile-profile profile">
-            <div class="profile-avatar">JD</div>
+            <div class="profile-avatar" id="profile-avatar-mobile">--</div>
           </div>
         </div>
       </header>
@@ -316,5 +318,45 @@
   <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
   <!-- Make sure script.js is loaded AFTER Chart.js -->
   <script src="script.js"></script>
+  <script src="js/profile.js"></script>
+  <script>
+     document.addEventListener('DOMContentLoaded', function () {
+    const nameEl = document.getElementById('profile-name');
+    const roleEl = document.getElementById('profile-role');
+    const avatarDesktop = document.getElementById('profile-avatar-desktop');
+    const avatarMobile = document.getElementById('profile-avatar-mobile');
+
+    const email = localStorage.getItem('userEmail');
+    if (!email) {
+      nameEl.textContent = 'No email found';
+      avatarDesktop.textContent = '--';
+      avatarMobile.textContent = '--';
+      return;
+    }
+
+    fetch(`http://localhost:3000/user/${email}`)
+      .then(response => response.json())
+      .then(data => {
+        const user = data.userDetails;
+        console.log(user);
+        const fullName = `${user.firstName || ''} ${user.lastName || ''}`.trim();
+        const initials = (user.firstName?.[0] || '') + (user.lastName?.[0] || '');
+        const plan = user.plan || 'Free';
+
+        nameEl.textContent = fullName;
+        roleEl.textContent = plan;
+        avatarDesktop.textContent = initials.toUpperCase() || '--';
+        avatarMobile.textContent = initials.toUpperCase() || '--';
+      })
+      .catch(err => {
+        console.error('Error fetching user:', err);
+        nameEl.textContent = 'Unavailable';
+        roleEl.textContent = 'Try again later';
+        avatarDesktop.textContent = '--';
+        avatarMobile.textContent = '--';
+      });
+  });
+
+  </script>
 </body>
 </html>

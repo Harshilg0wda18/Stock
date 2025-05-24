@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Colorful Checkout UI</title>
+  <link rel="stylesheet" href="css/payment.css" />
+</head>
+<body>
+  <div class="checkout-box">
+    <h1>💳 Smart Checkout</h1>
+
+    <div class="section">
+      <h2>🧑 Customer Info</h2>
+      <input type="text" placeholder="Full Name" />
+      <input type="email" placeholder="Email" />
+      <input type="tel" placeholder="Phone Number" />
+    </div>
+
+    <div class="section">
+      <h2>🛍 Order Summary</h2>
+      <div class="plan-options">
+        <div class="plan-option" onclick="selectPlan('starter')">
+          <input type="radio" name="plan" id="starter" value="starter" checked>
+          <label for="starter">
+            <span class="plan-name">Starter Plan</span>
+            <span class="plan-price">$9</span>
+          </label>
+        </div>
+        <div class="plan-option" onclick="selectPlan('pro')">
+          <input type="radio" name="plan" id="pro" value="pro">
+          <label for="pro">
+            <span class="plan-name">Pro Plan</span>
+            <span class="plan-price">$29</span>
+          </label>
+        </div>
+        <div class="plan-option" onclick="selectPlan('premium')">
+          <input type="radio" name="plan" id="premium" value="premium">
+          <label for="premium">
+            <span class="plan-name">Premium Plan</span>
+            <span class="plan-price">$99</span>
+          </label>
+        </div>
+      </div>
+      <div class="summary">
+        <div><span>Selected Plan</span><span id="selectedPlan">Starter Plan</span></div>
+        <div><span>Plan Price</span><span id="planPrice">$9</span></div>
+        <div><span>Taxes</span><span id="taxAmount">$1.62</span></div>
+        <div class="total"><strong>Total</strong><strong id="totalAmount">$10.62</strong></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>💰 Choose Payment</h2>
+      <div class="payment-options">
+        <button onclick="showMethod('upi')">UPI</button>
+        <button onclick="showMethod('card')">Card</button>
+        <button onclick="showMethod('netbanking')">Netbanking</button>
+      </div>
+    </div>
+
+    <div id="upi-form" class="pay-method active">
+      <h3>Enter your UPI ID</h3>
+      <input type="text" id="upi-id" placeholder="example@upi" />
+    </div>
+
+    <div id="card-form" class="pay-method">
+      <h3>Enter Card Details</h3>
+      <input type="text" placeholder="Card Number" maxlength="19" />
+      <input type="text" placeholder="MM/YY" maxlength="5" />
+      <input type="text" placeholder="CVV" maxlength="3" />
+    </div>
+
+    <div id="netbanking-form" class="pay-method">
+      <h3>Select Bank</h3>
+      <select>
+        <option>Choose your bank</option>
+        <option>HDFC</option>
+        <option>ICICI</option>
+        <option>SBI</option>
+      </select>
+    </div>
+
+    <button class="pay-button" onclick="initiatePayment()">Pay $588.82</button>
+
+    <!-- Payment Modals -->
+    <div class="modal hidden" id="processing-modal">
+      <div class="modal-content">
+        <div class="loader"></div>
+        <p>Processing Payment...</p>
+      </div>
+    </div>
+
+    <div class="modal hidden" id="success-modal">
+      <div class="modal-content">
+        <div class="success-checkmark">✅</div>
+        <h2>Payment Successful</h2>
+        <p>Thanks for subscribing!</p>
+        <button onclick="closeSuccess()">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/payment.js"></script>
+</body>
+</html>

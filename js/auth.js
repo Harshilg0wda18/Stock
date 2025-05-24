@@ -129,16 +129,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (!hasErrors) {
                 try {
-                    const response = await fetch('https://stock-back-bh40.onrender.com/login', {
+                    const response = await fetch('http://localhost:3000/login', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ email, password })
                     });
 
                     const result = await response.json();
+                    console.log(result);
                     if (response.ok) {
                         authMessage.className = 'auth-message success';
                         authMessage.textContent = result.message;
+                        // Store email in localStorage during login
+                        localStorage.setItem('userEmail', email);
                         window.location.href = 'dashboard.html';
                     } else {
                         authMessage.className = 'auth-message error';
@@ -156,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const signupForm = document.getElementById('signupForm');
     
     if (signupForm) {
-      signupForm.addEventListener('submit', function(e) {
+      signupForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
         const firstName = document.getElementById('firstName').value;
@@ -230,27 +233,39 @@ document.addEventListener('DOMContentLoaded', function() {
           termsError.textContent = 'You must agree to the Terms of Service and Privacy Policy';
           hasErrors = true;
         }
+
         if (!hasErrors) {
-          fetch('https://stock-back-bh40.onrender.com/signup', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ firstName, lastName, email, password })
-          }).then(async response => {
+          try {
+            const response = await fetch('http://localhost:3000/signup', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ firstName, lastName, email, password })
+            });
+            
             const result = await response.json();
-            if (response.ok) {
+            //console.log(result);
+            if (result.success) {
+              //console.log("success");
+              // Store email in localStorage
+              localStorage.setItem('userEmail', email);
+              
+              // Show success message
               authMessage.className = 'auth-message success';
-              authMessage.textContent = 'Registration successful. Please login';
+              authMessage.textContent = 'Registration successful.';
+              
+              // Redirect to payment page after delay
               setTimeout(() => {
-                window.location.href = 'login.html';
-              }, 2000); // Wait for 2 seconds before redirecting
+                window.location.href = '../payment.html';
+              }, 2000);
             } else {
               authMessage.className = 'auth-message error';
-              authMessage.textContent = result.message;
+              authMessage.textContent = result.message || 'Registration failed. Please try again.';
             }
-          }).catch(err => {
+          } catch (err) {
+            console.error('Signup error:', err);
             authMessage.className = 'auth-message error';
             authMessage.textContent = 'Error: ' + err.message;
-          });
+          }
         }
       });
     }
