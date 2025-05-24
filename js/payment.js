@@ -30,7 +30,7 @@ function closeSuccess() {
   }
   
   // Send data to backend
-  fetch('http://localhost:3000/api/save-plan', {
+  fetch('https://stock-back-bh40.onrender.com/api/save-plan', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

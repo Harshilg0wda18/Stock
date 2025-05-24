@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     return;
   }
 
-  fetch(`http://localhost:3000/user/${email}`)
+  fetch(`https://stock-back-bh40.onrender.com/user/${email}`)
     .then(response => response.json())
     .then(data => {
       const user = data.userDetails;
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
 
           // Fetch user data
-          fetch(`http://localhost:3000/user/${email}`)
+          fetch(`https://stock-back-bh40.onrender.com/user/${email}`)
             .then(async (response) => {
               const data = await response.json();
               //console.log("User data:", data);
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please log in to view your subscription');
             return;
           }
-          fetch(`http://localhost:3000/user/${emailForSub}`)
+          fetch(`https://stock-back-bh40.onrender.com/user/${emailForSub}`)
             .then(response => response.json())
             .then(data => {
               const user = data.userDetails || {};

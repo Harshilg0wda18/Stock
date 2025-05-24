@@ -6,7 +6,7 @@ function setTicker(ticker) {
 
 async function fetchHistoricalData(ticker, range, interval) {
   try {
-    const response = await fetch(`http://localhost:3001/stock/${ticker}/history?range=${range}&interval=${interval}`);
+    const response = await fetch(`https://yfin-api-9dz9.onrender.com/stock/${ticker}/history?range=${range}&interval=${interval}`);
     if (!response.ok) throw new Error("API error");
     const apiData = await response.json();
     return apiData.data.map(entry => ({

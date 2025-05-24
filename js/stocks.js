@@ -11,7 +11,7 @@ function setTicker(ticker) {
 }
 
 async function fetchStockData(ticker) {
-  const response = await fetch(`http://localhost:3001/stock/${ticker}`);
+  const response = await fetch(`https://yfin-api-9dz9.onrender.com/stock/${ticker}`);
   const data = await response.json();
 
   // Increment time by 1 minute
