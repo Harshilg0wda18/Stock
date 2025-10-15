@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
               
               // Redirect to payment page after delay
               setTimeout(() => {
-                window.location.href = 'https://bharath-070.github.io/stock/payment.html';
+                window.location.href = 'https://Harshilg0wda18.github.io/stock/payment.html';
               }, 2000);
             } else {
               authMessage.className = 'auth-message error';
